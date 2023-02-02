@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+	
+    <!-- Get input for predict the cancer -->
+  
+    <form action="" method="post">
+    {% csrf_token %} 
+     <div class="container text-center mt-5">
+        <h1 class="text-light">Suraj Sahani Programmer</h1>
+      </div>
+    <div class="container text-center mt-5">
+        <h1 class="text-light">Enter The Value Of Tumor Features >>></h1>
+      </div>
+       
+        
+    	<input type="text" name="mean_radius" placeholder="mean radius" required="required" />
+        <input type="text" name="mean_texture" placeholder="mean texture" required="required" />
+		<input type="text" name="mean_perimeter" placeholder="mean perimeter" required="required" />
+		<input type="text" name="mean_area" placeholder="mean area" required="required" />
+        <input type="text" name="mean_smoothness" placeholder="mean smoothness" required="required" />
+		<input type="text" name="mean_compactness" placeholder="mean compactness" required="required" />
+		<br>
+    	<input type="text" name="mean_concavity" placeholder="mean concavity" required="required" />
+        <input type="text" name="mean_concave_points" placeholder="mean concave points" required="required" />
+		<input type="text" name="mean_symmetry" placeholder="mean symmetry" required="required" />
+    	<input type="text" name="mean_fractal_dimension" placeholder="mean fractal dimension" required="required" />
+        <input type="text" name="radius_error" placeholder="radius error" required="required" />
+		<input type="text" name="texture_error" placeholder="texture error" required="required" />
+		<br>
+    	<input type="text" name="perimeter_error" placeholder="perimeter error" required="required" />
+        <input type="text" name="area_error" placeholder="area error " required="required" />
+		<input type="text" name="smoothness_error" placeholder="smoothness error" required="required" />
+    	<input type="text" name="compactness_error" placeholder="compactness error" required="required" />
+        <input type="text" name="concavity_error" placeholder="concavity error" required="required" />
+		<input type="text" name="concave_points_error" placeholder="concave points error" required="required" />
+    	<br>
+    	<input type="text" name="symmetry_error" placeholder="symmetry error" required="required" />
+        <input type="text" name="fractal_dimension_error" placeholder="fractal dimension error" required="required" />
+		<input type="text" name="worst_radius" placeholder="worst radius" required="required" />
+    	<input type="text" name="worst_texture" placeholder="worst texture" required="required" />
+        <input type="text" name="worst_perimeter" placeholder="worst perimeter" required="required" />
+		<input type="text" name="worst_area" placeholder="worst area" required="required" />
+		<br>
+    	<input type="text" name="worst_smoothness" placeholder="worst smoothness" required="required" />
+        <input type="text" name="worst_compactness" placeholder="worst compactness" required="required" />
+		<input type="text" name="worst_concavity" placeholder="worst concavity" required="required" />
+    	<input type="text" name="worst_concave_points" placeholder="worst concave points" required="required" />
+        <input type="text" name="worst_symmetry" placeholder="'worst symmetry" required="required" />
+		<input type="text" name="worst_fractal_dimension" placeholder="worst fractal dimension" required="required" />
+        <br>
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" ><a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Cancer</strong></button></a>
+        </div>
+        
+    </form>
+   
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+      <div class="container text-center mt-5">
+       <h1 class="text-light">{{ prediction_text }}</h1>
+      </div>
+ <div class="container text-center mt-5">
+       <h1 class="text-light">Created By Suraj Sahani</h1>
+       <h1 class="text-light">Full Stack Web Developer</h1>
+      </div>
+  
+     
+   </div>
+
+ </div>
+
+{% endblock content %}
